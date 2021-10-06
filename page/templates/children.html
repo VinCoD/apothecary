@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+
+{% block title %}
+<title>Children</title>
+{% endblock title %}
+
+{% block content%}
+<h1>Parent: {{ parent }} </h1>
+<p>Children: </p>
+{% for child in children %}
+<ul>
+    <li>{{ child }}</li>
+    
+</ul>
+{% endfor %}
+{% endblock content %}

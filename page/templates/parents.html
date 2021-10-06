@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+
+{% block title %}
+<title>Parents</title>
+{% endblock title %}
+
+{% block content%}
+{% for parent in parents %}
+<ul>
+    <li>{{ parent }}</li>
+    
+</ul>
+{% endfor %}
+{% endblock content %}
