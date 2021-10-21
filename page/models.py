@@ -14,6 +14,7 @@ class Child(models.Model):
     parent = models.ForeignKey(Parent, on_delete=models.CASCADE)
     name = models.CharField(max_length=200, null=True)
     date_added = models.DateTimeField(auto_now_add=True)
+    photo = models.ImageField(null=True)
 
     class Meta:
         verbose_name_plural = 'Children'
