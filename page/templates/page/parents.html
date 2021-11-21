@@ -1,4 +1,4 @@
-{% extends 'index.html' %}
+{% extends 'page/index.html' %}
 
 {% block title %}
 <title>Parents</title>
@@ -12,5 +12,7 @@
     </li>
     
 </ul>
+
 {% endfor %}
+<p><a href="{% url 'page:new_parent' %}">Add Parent</a></p>
 {% endblock content %}
