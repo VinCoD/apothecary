@@ -1,0 +1,10 @@
+{% extends 'page/index.html' %}
+{% block content %}
+<form action="{% url 'page:new_child' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit">Do it</button>
+    
+</form>
+
+{% endblock content %}

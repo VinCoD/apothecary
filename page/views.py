@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 
-from page.forms import ParentForm
+from page.forms import ParentForm, ChildForm
 from .models import Parent
 
 
@@ -32,4 +32,18 @@ def new_parent(request):
     
     context = {'form': form}
     return render(request, 'page/new_parent.html', context)
+
+def new_child(request):
+    if request.method != 'POST':
+        form = ChildForm()
     
+    else:
+        form = ChildForm(data=request.POST)
+        if form.is_valid:
+            form.save()
+            return redirect('page:parents')
+    
+    context = {'form': form}
+
+    return render(request, 'page/new_child.html', context)
+
