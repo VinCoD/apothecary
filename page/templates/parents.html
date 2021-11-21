@@ -5,9 +5,11 @@
 {% endblock title %}
 
 {% block content%}
-{% for parent in parents %}
+{% for children in parents %}
 <ul>
-    <li>{{ parent }}</li>
+    <li>
+        <a href="{% url 'page:children' children.id %}">{{ children }}</a>
+    </li>
     
 </ul>
 {% endfor %}
