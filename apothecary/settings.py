@@ -26,7 +26,7 @@ from .local_settings import *
 INSTALLED_APPS = [
     # my apps
     'page',
-    
+    'users',
     # django apps
     'django.contrib.admin',
     'django.contrib.auth',

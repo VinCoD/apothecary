@@ -9,9 +9,13 @@
     {% endblock title %}
 </head>
 <body>
-    {% block content %} 
-        <p>Hello you are in the Home Page</p>
-
+    {% block content %}
+    {% if user.is_authenticated %}
+        Hello, {{user.username}}.
+    {% else %}
+        <a href="{% url 'users:login' %}">LOGIN</a>
+    {% endif %}
+        
     {% endblock content%}
     
 </body>
