@@ -6,6 +6,13 @@
 Document
 ========
 */
+p input{
+    outline: none;
+    width: 30vw;
+    height:5vh;
+    margin-bottom: 2px solid black;
+    margin-left: 25px;
+}
 
 /**
 Use a better box model (opinionated).

@@ -1,14 +1,16 @@
 {% extends 'page/index.html' %}
 {% block content %}
-{% if form.errors %}
-<p>Your username and password did not match. Please try again. </p>
-{% endif %}
-<form action="{% url 'users:login' %}" method="post">
-    {% csrf_token %}
-    <input type="text">{{ form.username }}
-    <p class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"></p>
-    <p class='mt-2'>{{ form.password }}</p>
-    <button name="submit" class="mt-5">Log in</button>
-    <input type="hidden" name="next" value="{% url 'page:parents' %}">
-</form>
+<div class="bg-black-500">
+    {% if form.errors %}
+        <p class="text-center text-red-700 font-sans pt-5">Your username and password did not match. Please try again. </p>
+        {% endif %}
+        <form action="{% url 'users:login' %}" method="post" class="flex flex-col justify-center items-center p-12 mt-20">
+            {% csrf_token %}
+            <p class="font-sans rounded">{{ form.username }}</p>
+            <p class='mt-2 font-sans'>{{ form.password }}</p>
+            <button name="submit" class="mt-5 font-sans bg-green-500 p-1 w-40 rounded-xl">Log in</button>
+            <input type="hidden" name="next" value="{% url 'page:parents' %}">
+        </form>
+</div>
+
 {% endblock content %}
